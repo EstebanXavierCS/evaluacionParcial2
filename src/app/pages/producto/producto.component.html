@@ -1,0 +1,80 @@
+<div class="min-vh-100 bg-dark text-light py-5">
+  <div class="container">
+    <h1 class="text-center mb-5">🛍️ Catálogo de Productos 📦</h1>
+    
+    <!-- Gestión de Productos -->
+    <div class="card bg-secondary text-light mb-5">
+      <div class="card-header">
+        <h2 class="mb-0">✨ Gestión de Productos</h2>
+      </div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control form-control-dark" placeholder="Nombre del producto" [(ngModel)]="producto.nombre">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control form-control-dark" placeholder="Descripción del producto" [(ngModel)]="producto.descripcion">
+          </div>
+          <div class="col-md-6">
+            <input type="number" class="form-control form-control-dark" placeholder="Precio ($)" [(ngModel)]="producto.precio">
+          </div>
+          <div class="col-md-6">
+            <input type="number" class="form-control form-control-dark" placeholder="Cantidad disponible" [(ngModel)]="producto.cantidad">
+          </div>
+        </div>
+        
+        <div class="mt-4">
+          <button type="button" class="btn btn-success me-2 mb-2" (click)="this.insertarProducto()">
+            <i class="bi bi-plus-circle me-2"></i>Insertar
+          </button>
+          <button type="button" class="btn btn-primary me-2 mb-2" (click)="this.updateProducto()">
+            <i class="bi bi-pencil-square me-2"></i>Actualizar
+          </button>
+          <button type="button" class="btn btn-danger me-2 mb-2" (click)="this.deleteProducto()">
+            <i class="bi bi-trash me-2"></i>Eliminar
+          </button>
+          <button type="button" class="btn btn-secondary mb-2" (click)="this.cleanProducto()">
+            <i class="bi bi-eraser me-2"></i>Limpiar
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Listado de Productos -->
+    <div class="card bg-secondary text-light">
+      <div class="card-header">
+        <h2 class="mb-0">📋 Listado de Productos</h2>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th class="text-end">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(producto of productos; track producto.id){
+                <tr>
+                  <td>{{ producto.nombre }}</td>
+                  <td>{{ producto.descripcion }}</td>
+                  <td>{{ producto.precio }}</td>
+                  <td>{{ producto.cantidad }}</td>
+                  <td class="text-end">
+                    <button type="button" class="btn btn-sm btn-outline-light" (click)="selectProducto(producto)">
+                      <i class="bi bi-check-circle me-2"></i>Seleccionar
+                    </button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

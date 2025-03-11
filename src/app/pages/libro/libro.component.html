@@ -1,0 +1,81 @@
+<div class="min-vh-100 bg-dark text-light py-5">
+    <div class="container">
+      <h1 class="text-center mb-5">📚 Catálogo de Libros 📖</h1>
+      
+      <!-- Gestión de Libros -->
+      <div class="card bg-secondary text-light mb-5">
+        <div class="card-header">
+          <h2 class="mb-0">✨ Alta de Libros</h2>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control form-control-dark" placeholder="Título del libro" [(ngModel)]="libro.titulo">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control form-control-dark" placeholder="Autor" [(ngModel)]="libro.autor">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control form-control-dark" placeholder="Editorial" [(ngModel)]="libro.editorial">
+            </div>
+            <div class="col-md-6">
+              <input type="number" class="form-control form-control-dark" placeholder="Año de Publicación" [(ngModel)]="libro.anioPublicacion">
+            </div>
+          </div>
+          
+          <div class="mt-4">
+            <button type="button" class="btn btn-success me-2 mb-2" (click)="this.insertarLibro()">
+              <i class="bi bi-plus-circle me-2"></i>Insertar
+            </button>
+            <button type="button" class="btn btn-primary me-2 mb-2" (click)="this.updateLibro()">
+              <i class="bi bi-pencil-square me-2"></i>Actualizar
+            </button>
+            <button type="button" class="btn btn-danger me-2 mb-2" (click)="this.deleteLibro()">
+              <i class="bi bi-trash me-2"></i>Eliminar
+            </button>
+            <button type="button" class="btn btn-secondary mb-2" (click)="this.cleanLibro()">
+              <i class="bi bi-eraser me-2"></i>Limpiar Campos
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Listado de Libros -->
+      <div class="card bg-secondary text-light">
+        <div class="card-header">
+          <h2 class="mb-0">📋 Listado de Libros</h2>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Autor</th>
+                  <th>Editorial</th>
+                  <th>Año de Publicación</th>
+                  <th class="text-end">Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(libro of libros; track libro.id){
+                  <tr>
+                    <td>{{ libro.titulo }}</td>
+                    <td>{{ libro.autor }}</td>
+                    <td>{{ libro.editorial }}</td>
+                    <td>{{ libro.anioPublicacion }}</td>
+                    <td class="text-end">
+                      <button type="button" class="btn btn-sm btn-outline-light" (click)="selectLibro(libro)">
+                        <i class="bi bi-check-circle me-2"></i>Seleccionar
+                      </button>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
