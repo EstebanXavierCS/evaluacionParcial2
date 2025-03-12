@@ -1,23 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
-    <a class="navbar-brand" routerLink="/home">DS02SV-24</a>
-    <div id="navbarNav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/home">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/libro">Libro</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/deportes">Deportes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/producto">Producto</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/acerca">Acerca de</a>
-            </li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" routerLink="/home">
+        <i class="bi bi-code-slash me-2"></i>DS02SV-24
+      </a>
+      
+      <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link px-3" routerLink="/home" routerLinkActive="active">
+              <i class="bi bi-house-door me-1"></i> Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" routerLink="/libro" routerLinkActive="active">
+              <i class="bi bi-book me-1"></i> Libro
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" routerLink="/deportes" routerLinkActive="active">
+              <i class="bi bi-trophy me-1"></i> Deportes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" routerLink="/producto" routerLinkActive="active">
+              <i class="bi bi-box-seam me-1"></i> Producto
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" routerLink="/acerca" routerLinkActive="active">
+              <i class="bi bi-info-circle me-1"></i> Acerca de
+            </a>
+          </li>
         </ul>
-
+      </div>
     </div>
-</nav>
+  </nav>
+  
